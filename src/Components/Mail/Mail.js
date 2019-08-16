@@ -79,6 +79,7 @@ class Mail extends React.Component {
                                 addMessageHandler = {this.props.addMessage}
                                 activeUserEmail={user.email}   
                                 emailList={this.GetEmailList}   
+                                mobileView= {this.state.mobile}
                             />
                             <div className="sidebar-links">
                                 <button onClick={this.changeInboxHandler} className={this.state.section === 'inbox' ? 'active' : null }>Inbox</button>                            

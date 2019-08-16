@@ -80,7 +80,7 @@ class ComposeMailForm extends React.Component {
                             as="textarea"
                             name="content"                            
                             value={this.state.content} 
-                            rows="12"
+                            rows={this.props.mobileView ? '7' : '12'}
                             onChange={this.handleUserInput} />
                     </Form.Group>
                 

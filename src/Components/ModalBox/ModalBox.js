@@ -12,8 +12,9 @@ function ModalBox(props) {
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-  
+    console.log(props)
     return (
+      
       <>
         <Button className="btn block full-width" onClick={handleShow} >
           Compose Mail
