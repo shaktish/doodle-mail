@@ -1,0 +1,11 @@
+.form-bg {
+    background-color: #f7f7f7;
+    padding:20px 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.form-row>.col, .form-row>[class*=col-] {
+    padding-right: 15px;
+    padding-left: 15px;
+}
