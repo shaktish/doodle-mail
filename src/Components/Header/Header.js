@@ -15,7 +15,6 @@ const Header = (props) => {
     const handleImageError  = (e) => {
         e.target.src = defaultProfileImg
     }
-    console.log(profileImg);
     return (
         <header className="navbar navbar-expand">
              <Link to="/">
@@ -27,7 +26,7 @@ const Header = (props) => {
                 </div>
             </Link>
             <div className="navbar-nav ml-auto">
-                <Button className="btn block transparent link"><Link to="/create-user">Create User</Link></Button>
+                <Button className="btn block transparent link"><Link to="/create-user">{props.addUserText}</Link></Button>
 
                 <Dropdown className="switchUser-dropdown">
                     <Dropdown.Toggle id="dropdown-basic">

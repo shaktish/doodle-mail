@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container'
-import CreateUserForm from '../CreateUserForm';
+import CreateUserForm from '../CreateUserForm/CreateUserForm';
 
 import {connect} from 'react-redux';
 import AddUserActionCreator from '../../ActionCreators/AddUserActionCreator';
@@ -9,7 +9,6 @@ import './CreateUser.css'
 import doodlegif from '../../Assets/Images/doodle-gif.gif';
 import {Link} from 'react-router-dom';
 
-// import {Redirect} from 'react-router-dom';
 
 class CreateUser extends React.Component {
 

@@ -6,8 +6,8 @@ header {
     background-color: #006ada;
     padding:10px;
 
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +40,7 @@ header button {
 }
 
 .navbar .link {
-    width: 120px;
+    width: auto;
     margin-right: 15px;
 }
 .navbar .link a {
@@ -71,4 +71,16 @@ header button {
 
 .dropdown-toggle::after{
     opacity: 0;
+}
+
+@media only screen and (min-width:767px) {
+    .navbar .link {
+        width: 120px;
+    }
+
+    .logo-wrap {
+        width: 70px;
+        height: 70px;
+    }
+  
 }

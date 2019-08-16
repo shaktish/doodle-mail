@@ -2,8 +2,8 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
 // PAGES
-import CreateUser from './Components/Pages/CreateUser';
-import Mail from './Components/Pages/Mail/Mail';
+import CreateUser from './Components/CreateUser/CreateUser';
+import Mail from './Components/Mail/Mail';
 
 import {connect} from 'react-redux';
 
