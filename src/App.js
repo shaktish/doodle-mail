@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Switch} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// PAGES
+import CreateUser from './Components/CreateUser/CreateUser';
+import Mail from './Components/Mail/Mail';
+
+import {connect} from 'react-redux';
+
+
+class App extends React.Component {
+  render() {    
+    const hasNoUsers = this.props.userList.length === 0;
+    return (
+      <div className="App">
+        <Switch>
+            { 
+              hasNoUsers ? 
+                <Route path="/" render={(props)=><CreateUser {...props}/>}/> : 
+               <Route exact path="/" render={(props)=><Mail {...props}/>}/>          
+            }
+          <Route path="/create-user" render={(props)=><CreateUser {...props}/>}/>
+          
+          
+        </Switch>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return state;
+}
+
+const connectorComponent = connect(mapStateToProps)
+
+export default connectorComponent(App);

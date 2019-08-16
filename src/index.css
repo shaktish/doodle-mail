@@ -5,9 +5,61 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+p {
+  margin:0;
+}
+.btn {
+  border-color: transparent;
+  outline:none;
+}
+
+
+.btn:focus,
+.btn:active,
+.btn:active:focus {
+  box-shadow:none !important;
+}
+.block {
+  background:#006ada;
+}
+
+.full-width {
+  width:100%;
+}
+
+label {
+  font-weight: bold;
+  color:#0f0f0f;
+}
+
+.form-control:focus {
+  outline:0;
+  box-shadow:none;
+}
+
+textarea {
+  resize: none !important;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-color: #ced4da;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

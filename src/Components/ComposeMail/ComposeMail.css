@@ -1,0 +1,29 @@
+.rbt-input-wrapper {
+    display:flex;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+
+.rbt-input-wrapper .rbt-token {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.rbt-input-wrapper .rbt-token:focus {
+    outline:0;
+}
+
+.form-control.rbt-input-multi {
+    min-height: calc(1.5em + .75rem + 2px);
+    height: auto;
+}
+
+.rbt-close  {
+    margin-right: 8px;
+    margin-left: 3px;
+    font-size: 20px;
+}
+
+.rbt .dropdown-menu .dropdown-item {
+    padding: 6px 15px !important;
+}
