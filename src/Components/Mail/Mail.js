@@ -43,6 +43,7 @@ class Mail extends React.Component {
     }
 
     componentDidMount() {
+        document.title = 'Dmail';
         window.addEventListener("resize", this.resize());
         this.resize();
     }

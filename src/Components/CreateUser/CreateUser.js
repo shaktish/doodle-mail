@@ -16,6 +16,9 @@ class CreateUser extends React.Component {
         this.props.addUser(userData)
     }
 
+    componentDidMount() {
+        document.title = 'Create User';
+    }
     render () {
         return (
             <Container>
