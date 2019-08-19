@@ -12,7 +12,7 @@ function ModalBox(props) {
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    console.log(props)
+    //console.log(props)
     return (
       
       <>

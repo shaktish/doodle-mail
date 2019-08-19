@@ -14,27 +14,18 @@ import AddMessageActionCreator from '../../ActionCreators/AddMessageActionCreato
 /* IMPORT COMPONENTS */
 import Header from '../Header/Header';
 import ModalBox from '../ModalBox/ModalBox';
-import MessageListContainer from '../MessageListContainer/MessageListContainer';
+
+import {NavLink} from 'react-router-dom';
+
 
 
 
 class Mail extends React.Component {
     state = {
-        section : 'inbox',
+        view : this.props.view,
         mobile : false
     }
 
-    changeInboxHandler = () => {
-        this.setState({
-            section : 'inbox'
-        })
-    }
-
-    changeSentHandler = () => {
-        this.setState({
-            section : 'sent'
-        })
-    }    
 
     GetEmailList = () => {
         return this.props.userList.map(user=>{
@@ -43,9 +34,20 @@ class Mail extends React.Component {
     }
 
     componentDidMount() {
-        document.title = 'Dmail';
+        document.title = this.state.view;
         window.addEventListener("resize", this.resize());
         this.resize();
+    }
+
+    componentDidUpdate() {
+        if(this.state.view !== this.props.view) {
+            this.setState({
+                view : this.props.view
+            }, ()=>{
+                document.title = this.state.view;
+            })
+            
+        }
     }
 
     resize = () => {
@@ -60,6 +62,19 @@ class Mail extends React.Component {
     render () {
         const {activeUser: user, userList } = this.props;
         const receipient = this.state.section === 'inbox' ? 'to' : 'from';
+        
+
+        const children = React.Children.map(this.props.children, (child) => {
+            return React.cloneElement(child, {
+                //view:this.state.section,
+                ...this.props,
+                messageList: this.props.messageList,
+                receipient: receipient,
+                activeUserEmail:this.props.activeUser.email
+            });
+        });
+
+
         return (
             <div>
                 <Header 
@@ -83,20 +98,12 @@ class Mail extends React.Component {
                                 mobileView= {this.state.mobile}
                             />
                             <div className="sidebar-links">
-                                <button onClick={this.changeInboxHandler} className={this.state.section === 'inbox' ? 'active' : null }>Inbox</button>                            
-                                <button onClick={this.changeSentHandler} className={this.state.section === 'sent' ? 'active' : null }>Sent</button>
+                                <NavLink to="/inbox">Inbox</NavLink>
+                                <NavLink to="/sent">Sent</NavLink>                               
                             </div>
                         </div>
                         <main>
-                            <div className="message-block">
-                                    <MessageListContainer                                                                        
-                                        view={this.state.section}
-                                        messageList= {this.props.messageList}
-                                        receipient= {receipient}
-                                        activeUserEmail={this.props.activeUser.email}
-                                    />
-                                   
-                            </div>
+                            {children}
                         </main>
                     </div>
                 </Container>

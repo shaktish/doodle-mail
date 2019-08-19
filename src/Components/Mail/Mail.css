@@ -64,7 +64,7 @@ main {
     flex: 1 1 55%;
 }
 
-.sidebar-links button {
+.sidebar-links a {
     background: transparent !important;
     color: #0f0f0f;
     outline: none;
@@ -72,9 +72,10 @@ main {
     width: 100%;
     padding: 10px;
     text-align: left;
+    text-decoration: none;
 }
 
-.sidebar-links button.active {
+.sidebar-links a.active {
     color:#006ada;
     font-weight: bold;
 }
